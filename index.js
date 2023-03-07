@@ -1,13 +1,15 @@
 // const express = require("express");
 import express from "express";
 import { MongoClient } from "mongodb";
+import * as dotenv from "dotenv";
+dotenv.config();
 
 
 const app = express();
 
-const PORT = 4000;
+const PORT = process.env.PORT;
 
-const MONGO_URL ="mongodb+srv://rubynathan:ruby999@cluster0.abcwmtd.mongodb.net";
+const MONGO_URL =process.env.MONGO_URL;
 const client = new MongoClient(MONGO_URL); // dial
 // Top level await
 await client.connect(); // call
